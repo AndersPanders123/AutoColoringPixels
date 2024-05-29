@@ -5,13 +5,17 @@ from os import _exit
 from pynput.keyboard import Key, Listener
 
 def move_mouse():
-    for _ in range(500):
+    while True:
         original_position = mouse.get_position()
+        if original_position[1] >= 1000:
+            print(original_position[0])
+            break
         mouse.hold(button='left')
-        mouse.move(original_position[0] - 2000, original_position[1], duration=0.2)
-        mouse.move(*original_position, duration=0.2)
-        mouse.move(original_position[0], original_position[1] + 2, duration=0.1)
-        mouse.release(button='left')
+        mouse.move(original_position[0] - 1900, original_position[1], duration=0.3)
+        mouse.move(*original_position, duration=0.3)
+        #mouse.move(original_position[0] - 2000, original_position[1], duration=0.2)
+        #mouse.move(*original_position, duration=0.2)
+        mouse.move(original_position[0], original_position[1] + 3, duration=0.1)
 
     mouse.move(original_position[0], 0, duration=0.1)
     move_mouse()
