@@ -20,10 +20,9 @@ def move_mouse():
         original_position = mouse.get_position()
         if original_position[1] >= 1000:
             break
-        for i in range(5):
-            mouse.hold(button='left')
-            mouse.move(original_position[0] - 2000, original_position[1], duration=duration_moveLeft)
-            mouse.move(*original_position, duration=duration_moveRight)
+        mouse.hold(button='left')
+        mouse.move(original_position[0] - 2000, original_position[1], duration=duration_moveLeft)
+        mouse.move(*original_position, duration=duration_moveRight)
         mouse.move(original_position[0], original_position[1] + pixels_down, duration_moveDown)
 
     mouse.move(original_position[0], 0, duration=duration_moveUpp)
