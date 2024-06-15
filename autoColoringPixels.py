@@ -14,11 +14,13 @@ def move_mouse():
     duration_moveDown = 0.01 #Change this value to adjust the speed of the mouse when moving down
     duration_moveUpp = 0.01 #Change this value to adjust the speed of the mouse when moving up
 
-    pixels_down = 4 #Change this value to adjust the amount of pixels the mouse moves down
+    pixels_down = 1 #Change this value to adjust the amount of pixels the mouse moves down
+
+    breakPoint = 1000
 
     while True:
         original_position = mouse.get_position()
-        if original_position[1] >= 1000:
+        if original_position[1] >= breakPoint:
             break
         mouse.hold(button='left')
         mouse.move(original_position[0] - 2000, original_position[1], duration=duration_moveLeft)
