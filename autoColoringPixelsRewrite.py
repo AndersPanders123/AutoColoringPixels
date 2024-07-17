@@ -13,12 +13,12 @@ spawn = mouse.get_position()
 
 def move_mouse():
     global original_position
-    duration_moveLeft = 0.5 #Change this value to adjust the speed of the mouse
-    duration_moveRight = 0.5 #Change this value to adjust the speed of the mouse back to the original position
+    duration_moveLeft = 0.4 #Change this value to adjust the speed of the mouse
+    duration_moveRight = 0.4 #Change this value to adjust the speed of the mouse back to the original position
     duration_moveDown = 0.01 #Change this value to adjust the speed of the mouse when moving down
     duration_moveUpp = 0.01 #Change this value to adjust the speed of the mouse when moving up
 
-    pixels_down = 10 #Change this value to adjust the amount of pixels the mouse moves down
+    pixels_down = 40 #Change this value to adjust the amount of pixels the mouse moves down
 
     breakPoint = 1000
 
@@ -26,10 +26,9 @@ def move_mouse():
         original_position = mouse.get_position()
         if original_position[1] >= breakPoint:
             break
-        for i in range(3):
-            mouse.hold(button='left')
-            mouse.move(original_position[0] - 2000, original_position[1], duration=duration_moveLeft)
-            mouse.move(*original_position, duration=duration_moveRight)
+        mouse.hold(button='left')
+        mouse.move(original_position[0] - 2000, original_position[1], duration=duration_moveLeft)
+        mouse.move(*original_position, duration=duration_moveRight)
         mouse.move(original_position[0], original_position[1] + pixels_down, duration_moveDown)
 
     mouse.move(original_position[0], 0, duration=duration_moveUpp)

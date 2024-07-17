@@ -9,12 +9,12 @@ spawn = mouse.get_position()
 
 def move_mouse():
     global original_position
-    duration_moveLeft = 0.4 #Change this value to adjust the speed of the mouse
-    duration_moveRight = 0.4 #Change this value to adjust the speed of the mouse back to the original position
+    duration_moveLeft = 0.2 #Change this value to adjust the speed of the mouse
+    duration_moveRight = 0.2 #Change this value to adjust the speed of the mouse back to the original position
     duration_moveDown = 0.01 #Change this value to adjust the speed of the mouse when moving down
     duration_moveUpp = 0.01 #Change this value to adjust the speed of the mouse when moving up
 
-    pixels_down = 1 #Change this value to adjust the amount of pixels the mouse moves down
+    pixels_down = 4 #Change this value to adjust the amount of pixels the mouse moves down
 
     breakPoint = 1000
 
